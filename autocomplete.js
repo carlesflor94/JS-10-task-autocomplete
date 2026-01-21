@@ -3,6 +3,24 @@ const autocomplete = document.querySelector('.search__results');
 const repository = document.querySelector('.repositories__list');
 const subtitle = document.querySelector('.search__subtitle');
 
+
+const debounce = (fn, debounceTime = 0) => {
+  let delayTime = 0;
+
+  return function (...args) {
+    const newCall = this;
+
+    if (delayTime !== 0) {
+      clearTimeout(delayTime);
+    }
+
+    delayTime = setTimeout(() => {
+       return fn.apply(newCall, args);
+    }, debounceTime)
+  } 
+};
+
+
 function addAutocomplete(items) {
 
     autocomplete.innerHTML = '';
@@ -82,7 +100,7 @@ function addRepositories(repo) {
 }
 
 
-input.addEventListener('input', (event) => {
+input.addEventListener('input', debounce((event) => {
     const query = event.target.value;
     searchRepositories(query);
-});
+}, 500));
