@@ -3,6 +3,11 @@ const autocomplete = document.querySelector('.search__results');
 const repository = document.querySelector('.repositories__list');
 
 function addAutocomplete(items) {
+
+    if (items.length === 0) {
+        autocomplete.style.display = 'none';
+        return;
+    }
     items.slice(0, 5).forEach(repo => {
         const item = document.createElement('div');
         item.textContent = repo.full_name;
@@ -51,7 +56,7 @@ function searchRepositories(query) {
 
 function addRepositories(repo) {
     const item = document.createElement('div');
-    item.classList.add('repositories-item');
+    item.classList.add('repositories__list');
     const githubData = document.createElement('span');
     githubData.textContent = `${repo.name} | ${repo.owner.login} | ⭐ ${repo.stargazers_count}`;
 
@@ -62,7 +67,7 @@ function addRepositories(repo) {
         item.remove();
     })
 
-    item.appendChild(info);
+    item.appendChild(githubData);
     item.appendChild(deleteButton);
     repository.appendChild(item);
 }
