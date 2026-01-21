@@ -61,7 +61,7 @@ function searchRepositories(query) {
 
 function addRepositories(repo) {
     const item = document.createElement('div');
-    item.classList.add('repositories__list');
+    item.classList.add('repositories__item');
     const githubData = document.createElement('span');
     githubData.textContent = `${repo.name} | ${repo.owner.login} | ⭐ ${repo.stargazers_count}`;
 

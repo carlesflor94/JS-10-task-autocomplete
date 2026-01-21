@@ -5,3 +5,73 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.main {
+    width: 400px;
+    font-size: 18px;
+}
+
+.search__text {
+    width: 100%;
+    padding: 12px;
+}
+
+/*autocomplete styles*/
+
+.search__results {
+    width: 100%;
+    border: 1px solid #ccc;
+    background: rgb(139, 183, 242);
+    display: none;
+}
+
+.autocomplete-item {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 3px solid black;
+}
+
+
+.autocomplete-item:hover {
+    background-color: green;
+}
+
+
+/*repositories results styling*/
+
+.repositories__list {
+    margin-top: 20px;
+}
+
+.repositories__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+}
+
+.repositories__item button {
+    background: darkred;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.repositories__item button:hover {
+    background: red;
+}
+
+
+/*subtitle*/
+
+.search__subtitle {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
