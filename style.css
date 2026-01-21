@@ -53,16 +53,17 @@ body {
 
 .repositories__list {
     margin-top: 20px;
+    color: black
 }
 
 .repositories__item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
     margin-top: 8px;
-    border: 1px solid #ccc;
-    background: #f9f9f9;
+    border: 1px solid black;
+    background: rgb(139, 183, 242);
 }
 
 .repositories__item button {
