@@ -25,7 +25,7 @@ body {
 
 .search__text {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
 }
 
 /*autocomplete styles*/
@@ -60,10 +60,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
     margin-top: 8px;
     border: 1px solid black;
     background: rgb(139, 183, 242);
+    width: 100%;
 }
 
 .repositories__item button {
