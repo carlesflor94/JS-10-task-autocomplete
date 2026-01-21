@@ -32,7 +32,7 @@ function addAutocomplete(items) {
     }
 
     else {
-        items.slice(0, 5).forEach(repo => {
+        items.forEach(repo => {
             const item = document.createElement('div');
             item.textContent = repo.full_name;
             item.classList.add('autocomplete-item');
@@ -62,17 +62,12 @@ function searchRepositories(query) {
     }
 
     else {
-        fetch(`https://api.github.com/search/repositories?q=${query}`)
+        fetch(`https://api.github.com/search/repositories?q=${query}&per_page=5`)
             .then(response => {
                 return response.json();
             })
             .then(data => {
-                if (data.items) {
                     addAutocomplete(data.items);
-                } 
-                else {
-                    addAutocomplete([]);
-                    }
             })
             .catch(error => {
                 console.error('Repositories not fetched');
