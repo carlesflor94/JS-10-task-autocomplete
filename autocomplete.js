@@ -1,6 +1,7 @@
 const input = document.querySelector('.search__text');
 const autocomplete = document.querySelector('.search__results');
 const repository = document.querySelector('.repositories__list');
+const subtitle = document.querySelector('.search__subtitle');
 
 function addAutocomplete(items) {
 
@@ -8,6 +9,7 @@ function addAutocomplete(items) {
 
     if (items.length === 0) {
         autocomplete.style.display = 'none';
+        subtitle.style.display = 'none';
         return;
     }
 
@@ -22,12 +24,14 @@ function addAutocomplete(items) {
                 input.value = '';
                 autocomplete.innerHTML = '';
                 autocomplete.style.display = 'none';
+                subtitle.style.display = 'none';
             });
 
             autocomplete.appendChild(item);
         });
 
         autocomplete.style.display = 'block';
+        subtitle.style.display = 'block';
     }
 }
 
