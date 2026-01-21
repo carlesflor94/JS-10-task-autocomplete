@@ -6,6 +6,7 @@ body {
     align-items: flex-start;
     padding-top: 30px;
     color: white;
+    font-family: 'Roboto', sans-serif;
 
     background-image: url("img/busan-1.jpg");
     background-size: cover;
@@ -44,7 +45,7 @@ body {
 
 
 .autocomplete-item:hover {
-    background-color: green;
+    background-color: rgb(17, 12, 167);
 }
 
 
