@@ -4,26 +4,31 @@ const repository = document.querySelector('.repositories__list');
 
 function addAutocomplete(items) {
 
+    autocomplete.innerHTML = '';
+
     if (items.length === 0) {
         autocomplete.style.display = 'none';
         return;
     }
-    items.slice(0, 5).forEach(repo => {
-        const item = document.createElement('div');
-        item.textContent = repo.full_name;
-        item.classList.add('autocomplete-item');
 
-        item.addEventListener('click', () => {
-            addRepositories(repo);
-            input.value = '';
-            autocomplete.innerHTML = '';
-            autocomplete.style.display = 'none';
+    else {
+        items.slice(0, 5).forEach(repo => {
+            const item = document.createElement('div');
+            item.textContent = repo.full_name;
+            item.classList.add('autocomplete-item');
+
+            item.addEventListener('click', () => {
+                addRepositories(repo);
+                input.value = '';
+                autocomplete.innerHTML = '';
+                autocomplete.style.display = 'none';
+            });
+
+            autocomplete.appendChild(item);
         });
 
-        autocomplete.appendChild(item);
-    });
-
-    autocomplete.style.display = 'block';
+        autocomplete.style.display = 'block';
+    }
 }
 
 function searchRepositories(query) {
